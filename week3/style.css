@@ -1,0 +1,145 @@
+@font-face {
+    font-family: spinwerad;
+    src: url('./assets/spinwerad.ttf');
+}
+  
+* {
+    font-family: spinwerad;
+    color: rgb(185,122,87);
+
+}
+
+body {
+    margin: auto; 
+}
+
+main {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
+    height: 80vh;
+    /* background-image: url('./assets/images/socrates_statue_1500.jpg'); */
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: relative;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    background-color: rgb(102, 63, 42);
+    height: 20vh;
+}
+
+#titleShadow {
+    width: 50%;
+    background-color: rgb(231, 198, 111, 0.70);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 24px;
+}
+
+#title {
+    font-size: 36pt;
+}
+
+#title, #subtitle {
+    color: rgb(102, 63, 42)
+}
+
+#links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#links a {
+    color: rgb(238,215,161);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+#links a:visited {
+    color: white;
+}
+
+#images {
+    text-align: center;
+}
+
+@media (min-width: 500px) {
+    main {
+        background-image: url('./assets/images/socrates_statue_500.jpg');
+    }
+}
+
+@media (min-width: 1000px) {
+    main {
+        background-image: url('./assets/images/socrates_statue_1000.jpg');
+    }
+}
+
+@media (min-width: 1500px) {
+    main {
+        background-image: url('./assets/images/socrates_statue_1500.jpg');
+    }
+}
+
+/* CALENDAR STYLES */
+
+calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 75px);
+    gap: 6px;
+    width: 525px;
+    margin: auto;
+    position: relative;
+    top: 150px;
+ }
+
+month {
+    grid-column: span 7;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(231, 198, 111, 0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+leader, trailer, day {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(238, 215, 161, 0.70);
+    border-radius: 8px;
+}
+
+leader {
+    grid-column: span 3;
+    background-color: rgb(238, 215, 161, 0.70);
+}
+
+trailer {
+    grid-column: span 4;
+    background-color: rgb(238, 215, 161, 0.70);
+}
+
+day {
+    background-color: rgb(102, 63, 42);
+    box-sizing: border-box;
+    text-align: right;
+    padding: 2px 4px 0px 0px;
+}
+
+#birthday {
+    font-weight: 700;
+    color: rgb(102, 63, 42);
+    background-color: rgb(238,215,161);
+}

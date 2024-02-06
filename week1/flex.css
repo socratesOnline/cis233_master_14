@@ -1,0 +1,16 @@
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+div {
+    height: 60px;
+    width: 200px;
+    background-color: lightblue;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

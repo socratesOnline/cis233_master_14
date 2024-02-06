@@ -1,0 +1,52 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    color: white;
+    background-color: black;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(7, 75px);
+    gap: 6px;
+}
+
+month {
+    grid-column: span 7;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(35, 200, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+leader, trailer, day {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(40, 40, 40);
+    border-radius: 8px;
+}
+
+leader {
+    grid-column: span 3;
+    background-color: rgb(40, 40, 40);
+}
+
+trailer {
+    grid-column: span 4;
+    background-color: rgb(40, 40, 40);
+}
+
+day {
+    background-color: lightblue;
+    box-sizing: border-box;
+    text-align: right;
+    padding: 2px 4px 0px 0px;
+}
+
+#birthday {
+    font-weight: 700;
+    color: yellow;
+    background-color: blue;
+}

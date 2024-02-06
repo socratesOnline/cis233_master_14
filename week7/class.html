@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Class</title>
+</head>
+<body>
+    <nav><ul id="nav"></ul></nav>
+    <main>
+        <h1>Class Maintenance</h1>
+        <div id="itemWrapper">
+            <table>
+                <tr>
+                    <td colspan="3">
+                        <select id="semesterList" style="width:100%" onchange="getClass(this)"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <select id="classList" multiple style="width:100%"> </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input 
+                            type="text" 
+                            id = "className"
+                            placeholder="Class Name"
+                            style="width:130px;"
+                        >
+                    </td>
+                    <td>
+                        <input 
+                            type="text" 
+                            id="sectionNumber"
+                            placeholder="Section Number"
+                            style="width:130px;"
+                        >
+                    </td>
+                    <td>
+                        <button onclick="deleteClass()">Delete</button>
+                        <button onclick="addClass()">Add</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+</body>
+<script src="./assets/data/array.js"></script>
+<script src="./assets/data/jscript.js"></script>
+<script>
+
+    blnOption = false;
+    getMenu();
+    getSemester();
+
+    function deleteClass() {
+        // set variables
+        var classIndex = document.getElementById("classList").selectedIndex;
+        var semesterId = document.querySelector('#semesterList').selectedOptions[0].value;
+        var ary = eval(`ary${semesterId}`);
+
+        // validate that class is selected
+        if (classIndex < 0) {
+            alert('Please select the class you want to delete.');
+            return;
+        }
+
+        // remove class from array and redisplay list
+        ary.splice(semesterId, 1);
+        getClass(document.getElementById('semesterList'));
+    }
+
+    function addClass() {
+        // set up variables
+        var semesterId = document.querySelector('#semesterList').selectedOptions[0].value;
+        // another way of getting the semesterId
+        // var semesterId = document.getElementById('semesterList')[document.getElementById('semesterList').selectedIndex].value;
+        var className = document.getElementById('className').value;
+        var sectionNumber = document.getElementById('sectionNumber').value;
+        var ary = eval(`ary${semesterId}`);
+
+        // push new class to array
+        var newAry = ary.push([`${sectionNumber}`,`${className} ${sectionNumber}`]);
+
+        // reset input fields
+        document.getElementById('className').value = '';
+        document.getElementById('sectionNumber').value = '';
+        
+        // reload page with new values
+        getClass(document.getElementById('semesterList'));
+    }
+
+</script>
+</html>

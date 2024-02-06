@@ -1,0 +1,17 @@
+form {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 1rem;
+}
+
+.double {
+    grid-column: span 2;
+}
+
+.quad {
+    grid-column: span 4;
+}
+
+input, select {
+    width: 100%;
+}
